@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 To reproduce the results shown in the main body of paper, we provide our pretrained full group sparse models by HSPG. 
 
-They can be downloaded via this [link](https://drive.google.com/drive/folders/1Zjj6-o6PM3F4VkFLpvg6-bBkpaQ4uiD9?usp=sharing).
+They can be downloaded via this [link](drive.google.com/drive/folders/1Zjj6-o6PM3F4VkFLpvg6-bBkpaQ4uiD9?usp=sharing).
 
 These full group sparse models can be directly pruned by the following scripts to generate slimmer models with the exact same performance as the full group sparse models. 
 
@@ -55,6 +55,14 @@ python prune/prune_bert_squad.py --checkpoint_dir <checkpoint_dir> --eval_data <
 For example,
 ```
 python prune/prune_bert_squad.py --checkpoint_dir checkpoints/bert_squad_oto_params_40_exact_71_f1_81 --eval_data data/squad/dev-v1.1.json
+
+python prune/prune_bert_squad.py --checkpoint_dir checkpoints/bert_squad_oto_params_53_exact_71_f1_82 --eval_data data/squad/dev-v1.1.json
+
+python prune/prune_bert_squad.py --checkpoint_dir checkpoints/bert_squad_oto_params_67_exact_72_f1_82 --eval_data data/squad/dev-v1.1.json
+
+python prune/prune_bert_squad.py --checkpoint_dir checkpoints/bert_squad_oto_params_76_exact_72_f1_82 --eval_data data/squad/dev-v1.1.json
+
+python prune/prune_bert_squad.py --checkpoint_dir checkpoints/bert_squad_oto_params_91_exact_75_f1_84 --eval_data data/squad/dev-v1.1.json
 ```
 
 The above pruning script generates corresponding pruned models in checkpoints dir, which return the exact same output as the full group sparse models.
