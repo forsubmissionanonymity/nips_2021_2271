@@ -17,7 +17,7 @@ To reproduce the results shown in the main body of paper, we provide our pretrai
 
 These full group sparse models can be directly pruned by the following scripts to generate slimmer models with the exact same performance as the full group sparse models. 
 
-They can be downloaded via this [link](drive.google.com/drive/folders/1Zjj6-o6PM3F4VkFLpvg6-bBkpaQ4uiD9?usp=sharing).
+They can be downloaded via this [link](https://drive.google.com/drive/folders/1Zjj6-o6PM3F4VkFLpvg6-bBkpaQ4uiD9?usp=sharing).
 
 ## Pruning
 
