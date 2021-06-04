@@ -29,20 +29,13 @@ To prune the full group sparse CNN models and construct the slimmer pruned model
 python prune/prune_cnn.py --backend <backend> --dataset_name <dataset_name>--checkpoint <checkpoint>
 ```
 For examples,
-- VGG16 on CIFAR10
 ```
 python prune/prune_cnn.py --backend vgg16 --dataset_name cifar10 --checkpoint checkpoints/vgg16_cifar10_group_sparse.pt
-```
-- VGG16-BN on CIFAR10
-```
+
 python prune/prune_cnn.py --backend vgg16_bn --dataset_name cifar10 --checkpoint checkpoints/vgg16_bn_cifar10_group_sparse.pt
-```
-- ResNet50 on CIFAR10
-```
+
 python prune/prune_cnn.py --backend resnet50 --dataset_name cifar10 --checkpoint checkpoints/resnet50_cifar10_group_sparse.pt
-```
-- ResNet50 on ImageNet
-```
+
 python prune/prune_cnn.py --backend resnet50 --dataset_name imagenet --checkpoint checkpoints/resnet50_imagenet_group_sparse.pt
 ```
 
