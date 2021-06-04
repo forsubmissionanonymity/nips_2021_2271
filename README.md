@@ -28,16 +28,21 @@ To prune the full group sparse CNN models and construct the slimmer pruned model
 ```prune
 python prune/prune_cnn.py --backend <backend> --dataset_name <dataset_name>--checkpoint <checkpoint>
 ```
-
 For examples,
-
+- VGG16 on CIFAR10
 ```
 python prune/prune_cnn.py --backend vgg16 --dataset_name cifar10 --checkpoint checkpoints/vgg16_cifar10_group_sparse.pt
-
+```
+- VGG16-BN on CIFAR10
+```
 python prune/prune_cnn.py --backend vgg16_bn --dataset_name cifar10 --checkpoint checkpoints/vgg16_bn_cifar10_group_sparse.pt
-
+```
+- ResNet50 on CIFAR10
+```
 python prune/prune_cnn.py --backend resnet50 --dataset_name cifar10 --checkpoint checkpoints/resnet50_cifar10_group_sparse.pt
-
+```
+- ResNet50 on ImageNet
+```
 python prune/prune_cnn.py --backend resnet50 --dataset_name imagenet --checkpoint checkpoints/resnet50_imagenet_group_sparse.pt
 ```
 
@@ -47,9 +52,7 @@ To prune the full group sparse Bert models and construct the slimmer pruned Bert
 ```
 python prune/prune_bert_squad.py --checkpoint_dir <checkpoint_dir> --eval_data <data_file_path>
 ```
-
-For examples,
-
+For example,
 ```
 python prune/prune_bert_squad.py --checkpoint_dir checkpoints/bert_squad_oto_params_40_exact_71_f1_81 --eval_data data/squad/dev-v1.1.json
 
@@ -66,11 +69,11 @@ The above pruning script generates corresponding pruned models in checkpoints di
 
 
 ## Training
-To train the CNNs in the paper, run this command:
+To train the CNNs in the paper, run the below commands:
 ```train
-python train/run_cnn.py --opt train/configs/config_vgg16_hspg.yml
-
 python train/run_cnn.py --opt train/configs/config_vgg16_bn_hspg.yml
+
+python train/run_cnn.py --opt train/configs/config_vgg16_hspg.yml
 
 python train/run_cnn.py --opt train/configs/config_resnet50_cifar10_hspg.yml
 
