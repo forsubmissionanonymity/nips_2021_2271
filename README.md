@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 
-## Pretrained full group sparse model
+## Pretrained full group sparse models and slimmer pruned models
 
 To reproduce the results shown in the main body of paper, we provide our pretrained full group sparse models by HSPG. 
 
