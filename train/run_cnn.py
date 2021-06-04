@@ -98,6 +98,9 @@ def train(opt, trainloader, testloader, model):
             f = criterion(y_pred, y)
             optimizer.zero_grad()
             f.backward()
+            if 'max_grad_norm' in opt['optimizer']:
+                if opt['optimizer']['max_grad_norm'] > 0:
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), opt['optimizer']['max_grad_norm'])
             if epoch < opt['optimizer']['n_p']:
                 optimizer.sgd_step()
             else:

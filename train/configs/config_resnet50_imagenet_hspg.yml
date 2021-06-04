@@ -21,6 +21,6 @@ optimizer:
     decay_mode: multi_step
     decays: [30, 60, 90]
     decays_lambda: [35, 40, 45]
-    momentum: 0.9
+    momentum: 0.0
     epsilon: [0.0, 0.0, 0.0, 0.0, 0.0]
     upper_group_sparsity: [1.0, 1.0, 1.0, 1.0, 1.0]

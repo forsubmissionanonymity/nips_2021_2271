@@ -230,11 +230,11 @@ def train(opt, train_dataset, model, tokenizer):
         torch.save(opt, os.path.join(output_dir, 'training_opts.bin'))
 
         if opt['optimizer']['name'] == 'hspg':  
-            if (epoch + 1) % opt['optimizer']['decay_lambda_epochs'] == 0:
+            if epoch in opt['optimizer']['decay_lambda_epochs']:
                 for param_group in optimizer.param_groups:      
                     param_group['lmbda'] = 0.0 if param_group['lmbda'] <= 1e-6 else param_group['lmbda'] / float(10)
 
-            if (epoch + 1) % opt['optimizer']['decay_lr_epochs'] == 0:
+            if epoch in opt['optimizer']['decay_lr_epochs']:
                 for param_group in optimizer.param_groups:      
                     param_group['lr'] /= float(10) # multi-step
 

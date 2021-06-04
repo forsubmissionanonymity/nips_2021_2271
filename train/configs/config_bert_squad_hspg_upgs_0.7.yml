@@ -22,11 +22,11 @@ version_2_with_negative: false
 train:
     batch_size: 32
     log_ckpt_freq: !!int 200 # per steps
-    max_epoch: 12
+    max_epoch: 8
     gradient_accumulation_steps: 1
     evaluate_during_training: true
-    evaluate_ckpt_freq: !!int 5 # per log_ckpt_freq
-    save_ckpt_freq: !!int 5 # per log_ckpt_freq
+    evaluate_ckpt_freq: !!int 20 # per log_ckpt_freq
+    save_ckpt_freq: !!int 20 # per log_ckpt_freq
     max_steps: -1
     train_times: !!int 2
 
@@ -41,11 +41,11 @@ optimizer:
     name: hspg
     init_stage: sgd
     init_lr: 0.1
-    n_p: 0
+    n_p: 1
     lambda: !!float 1e-3
     decay_mode: multi_step
-    decay_lr_epochs: 4
-    decay_lambda_epochs: 2
+    decay_lr_epochs: [2, 4, 6]
+    decay_lambda_epochs: [2, 4, 6]
     momentum: 0.0
     max_grad_norm: 1.0
     epsilon: [0.0, 0.0, 0.0, 0.0, 0.0]
