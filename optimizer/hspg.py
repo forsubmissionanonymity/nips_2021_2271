@@ -339,7 +339,7 @@ class HSPG(Optimizer):
     
     def adapt_epsilon(self, adapt_epsilons, upper_group_sparsities, prev_group_sparsity):
         total_num_zero_groups, total_num_groups, group_sparsities, overall_group_sparsity, omega = self.compute_group_sparsity_omega()
-        if overall_group_sparsity > prev_group_sparsity:
+        if overall_group_sparsity > prev_group_sparsity + 0.01:
             return False, overall_group_sparsity, None
         updated_epsilons = [0.0] * 5
         for group in self.param_groups:
