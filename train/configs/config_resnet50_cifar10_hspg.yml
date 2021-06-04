@@ -17,10 +17,10 @@ optimizer:
     name: hspg
     init_stage: sgd
     init_lr: 0.1
-    n_p: 150
+    n_p: 75
     lambda: !!float 1e-3
     decay_mode: multi_step
-    decays: [75, 130, 150]
+    decays: [75, 150, 225]
     momentum: 0.0
     epsilon: [0.0, 0.0, 0.0, 0.0, 0.0]
     upper_group_sparsity: [1.0, 1.0, 1.0, 1.0, 1.0]
